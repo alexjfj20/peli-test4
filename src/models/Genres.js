@@ -6,6 +6,8 @@ const Genres = sequelize.define('genres', {
         type: DataTypes.STRING,
         allowNull: false
     },
+}, {
+    timestamps: false,
 });
 
 module.exports = Genres;

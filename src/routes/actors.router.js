@@ -1,9 +1,15 @@
-const { getAll } = require('../controllers/actors.controllers');
+const { getAll, create, getOne, remove, update } = require('../controllers/actors.controllers');
 const express = require('express');
 
-const actrosRouter = express.Router();
+const actorsRouter = express.Router();
 
-actrosRouter.route('/')
+actorsRouter.route('/')
     .get(getAll)
+    .post(create);
 
-module.exports = actrosRouter;
+actorsRouter.route('/:id')
+    .get(getOne)
+    .delete(remove)
+    .put(update);
+
+module.exports = actorsRouter;

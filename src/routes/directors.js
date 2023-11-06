@@ -1,12 +1,15 @@
-const { getAll } = require('../controllers/directors.controllers');
+const { getAll, create, getOne, remove, update } = require('../controllers/directors.controllers');
 const express = require('express');
-
-// se crea una ruta  director
 
 const directorsRouter = express.Router();
 
 directorsRouter.route('/')
     .get(getAll)
+    .post(create);
+
+directorsRouter.route('/:id')
+    .get(getOne)
+    .delete(remove)
+    .put(update);
 
 module.exports = directorsRouter;
-
