@@ -41,7 +41,7 @@ const setMoviesGenres = catchError(async(req, res) => {
     const { id } = req.params;
     const movies = await Movies.findByPk(id);
     if (!movies) return res.status(404).json({ message: "Movies not found"});
-    await movies.setGengres(req.body);
+    await movies.setGenres(req.body);
     const genres = await movies.getGenres();
     return res.json(genres);
 });
