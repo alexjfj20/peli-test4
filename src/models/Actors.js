@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 
-const Actors = sequelize.define('artors', {
+const Actors = sequelize.define('actors', {
     firstName: {
         type: DataTypes.STRING,
         allowNull: false
