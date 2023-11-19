@@ -51,7 +51,7 @@ const setMoviesActors = catchError(async(req, res) => {
     const movies = await Movies.findByPk(id);
     if (!movies) return res.status(404).json({ message: "Movies not found"});
     await movies.setActors(req.body);
-    const actors = await movies.getActors();
+    const actors = await movies.getActors(); // Traer los generos
     return res.json(actors);
 
 });
